@@ -1,0 +1,74 @@
+body {
+	font-family: 'Bellota Text', cursive;
+}
+.container{
+	max-width: 1280px;;
+	width: 1280px;
+	margin: auto;
+}
+.welcomeSection{
+	height: 100vh;
+	width: 100%;
+	background-image: url(/img/welcome-bg.jpg);
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+.smokebg{
+	position: absolute;
+	width: 100%;
+	background-image: url(/img/smoke2.png);
+	background-size: cover;
+	height: 200px;
+	bottom: -20px;
+}
+.smoke_bottom:after	{
+	content: '';
+	display: block;
+	background-image: url(/img/smoke.png);
+	bottom: 0;
+	background-size: cover;
+	width: 2000px;
+	height: 300px;
+	position: absolute;
+	left: 50%;
+	margin-left: -1000px;
+	z-index: 3;
+}
+.tining:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .6;
+	border-radius: 10px;
+	z-index: -1;
+}
+.common_menu{
+	position: absolute;
+	width: 100%;
+}
+.welcome_nav {
+	color: #fff;
+	margin-top: 10vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.welcome_nav .logo{
+	text-align: center;
+}
+.welcome_nav .logo .separator{
+	display: block;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	margin: 3px auto;
+}
+.welcome_nav .logo h3{
+	font-size: calc(1.5rem + 6 * (100vw - 320px) / (960 - 320));
+	margin-bottom: 10px;
+}
