@@ -1,53 +1,137 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- CSS -->
-		<link href="https://fonts.googleapis.com/css?family=Bellota+Text:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
-		<link rel="stylesheet" href="/css/reset.css" crossorigin="anonymous">
-		<link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Эксклюзивный Lounge-Bar в центре Москвы</title>
-  </head>
-  <body>
-    <div class="wrapper">
-			<div class="common_menu">
-				<div class="container">
-					<nav>
-						<div class="logo"></div>
-						<div class="main_menu">
-							<ul>
-								<li><a href="">О нас</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/font-roboto.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/fontawesome/css/all.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/reset.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+
+	<title>Эксклюзивный Lounge-Bar в центре Москвы</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="common_menu">
+			<div class="container">
+				<nav>
+					<div class="logo"></div>
+					<div class="main_menu">
+						<ul>
+							<li><a href="">О нас</a></li>
+						</ul>
+					</div>
+				</nav>
 			</div>
-			<section class="welcomeSection tining smoke_bottom">
-				<div class="container">
-					<div class="welcome_nav">
-						<div class="logo">
-							<h3>DOZARI</h3>
-							<h4>LOUNGE</h4>
-							<span class="separator"></span>
-							<h4>BAR</h4>
+		</div>
+		<section class="welcomeSection tining smoke_bottom">
+			<div class="container">
+				<div class="welcome_nav">
+					<div class="logo">
+						<h3>DOZARI</h3>
+						<h4>LOUNGE</h4>
+						<span class="separator"></span>
+						<h4>BAR</h4>
+					</div>
+					<div class="contacts">
+						<div class="up">
+							<a target="_blank" href="https://yandex.ru/maps/-/CKqgZQyQ"><i class="far fa-map-marker-alt"></i>Чистопрудный
+								бул., 23 строение 1</a>
 						</div>
-						<div class="contacts">
-							1
+						<div class="down">
+							<a href=""><i class="fal fa-clock"></i>14:00 - 6:00</a>
+							<a target="_blank" href="https://www.instagram.com/dozariloungebar/"><i class="fab fa-instagram"></i>@dozariloungebar</a>
 						</div>
-						<div class="phone">
-							1
+					</div>
+					<div class="phone">
+						<div class="up">
+							<a href="tel:89999766126"><i class="fal fa-mobile"></i>8 (999) 976-61-26</a>
+						</div>
+						<div class="down">
+							<a data-title='Заказать звонок' data-button='Заказать' class="popup_reserve" href="">Заказать
+								звонок</a>
 						</div>
 					</div>
 				</div>
-				<span class="smokebg"></span>
-			</section>
-		</div>
+				<h1>Lounge-Bar в центре Москвы</h1>
+				<div class="welcome_icons">
+					<div>
+						<img src="/img/svg/panini.svg" alt="Вкусные панини, салаты, закуски в кальянной Dozari Lounge Bar">
+						<p>Кухня</p>
+					</div>
+					<div>
+						<img src="/img/svg/hookah.svg" alt="Самые дымные и вкусные кальяны только в кальянной Dozari Lounge Bar">
+						<p>Кальян</p>
+					</div>
+					<div>
+						<img src="/img/svg/cocktail.svg"
+							alt="Большой выбор алкогольных и безалкогольных напитков в кальянной Dozari Lounge Bar">
+						<p>Коктейли</p>
+					</div>
+					<div>
+						<img src="/img/svg/dj.svg" alt="Караоке, Dj, атмосфера и отличная музыка в кальянной Dozari Lounge Bar">
+						<p>Dj</p>
+					</div>
+				</div>
+				<div class="center">
+					<a data-title='Забронировать столик' data-button='Забронировать'
+						class="purple_button popup_reserve">Забронировать столик</a>
+				</div>
+				<div class="center">
+					<h2>HOOKAH LOUNGE KARAOKE BAR</h2>
+				</div>
+			</div>
+			<span class="smokebg"></span>
+		</section>
+		<section
+			style="height: 100vh; background-image: url(https://dubailounge.club/wp-content/themes/dubai/images/noise-bg.jpg);">
 
-    <!-- Optional JavaScript -->
-    <script src="/js/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
-  </body>
+		</section>
+		<div id="modal_feedback" class="modal_window">
+			<div class="modal_window__flex">
+				<div class="modal_background"></div>
+				<div class="modal">
+					<div class="modal_content">
+						<form action="ajax.php" method="POST">
+							<h3>placeholder</h3>
+							<span class="separator"></span>
+							<div class="form_inputs">
+								<input class="form_title" type="text" name='title' hidden>
+								<div class="input_wrapper">
+									<i class="fas fa-user"></i>
+									<input type="text" name="name" placeholder="Ваше имя" required>
+								</div>
+								<div class="input_wrapper">
+									<i class="fas fa-mobile"></i>
+									<input class="phone_number" type="text" name="number" placeholder="8 (999) 969-83-59">
+								</div>
+								<div class="input_wrapper reserve_input">
+									<i class="fas fa-user-friends"></i>
+									<input class="phone_number" type="text" name="member_count" placeholder="Количество человек">
+								</div>
+								<div class="input_wrapper reserve_input">
+									<i class="fas fa-clock"></i>
+									<input class="phone_number" type="text" name="time" placeholder="Время посещения">
+								</div>
+							</div>
+							<div class="center"><button class="purple_button">placeholder</button></div>
+						</form>
+					</div>
+					<a class="modal_close"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="/js/jquery.mask.js" crossorigin="anonymous"></script>
+	<script src="/js/main.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
