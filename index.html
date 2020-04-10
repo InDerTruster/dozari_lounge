@@ -9,6 +9,24 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/font-roboto.css" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap&subset=cyrillic" rel="stylesheet">
+	<!-- Favicon Settings -->
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	<!-- Font Awesome Css -->
 	<link rel="stylesheet" href="/css/fontawesome/css/all.css" crossorigin="anonymous">
 	<!-- Reset Css -->
@@ -24,7 +42,7 @@
 	<!-- Main CSS File -->
 	<link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
 
-	<title>Эксклюзивный Lounge-Bar DoZaRi в центре Москвы</title>
+	<title>Караоке Лаунж Бар DoZaRi в центре Москвы, м. Чистые пруды</title>
 </head>
 
 <body>
@@ -61,7 +79,7 @@
 			<div class="welcom_titles">
 				<div class="container">
 					<h1>Karaoke Lounge Bar в центре Москвы</h1>
-					<p>В нашем заведении вас ждет: <span></span></p>
+					<p>В нашем заведении вас ждет: <br><span></span></p>
 					<div class="center">
 						<a data-title="Забронировать столик" data-button="Забронировать"
 							class="purple_button popup_reserve">Забронировать столик</a>
@@ -407,7 +425,7 @@
 								d="m152 392c0 10.007 1.428 19.807 4.151 29.153 13.809-17.231 21.333-21.153 27.839-21.153 12.281 0 18.278 8.995 22.656 15.563 3.997 5.995 5.961 8.437 9.343 8.437s5.347-2.442 9.344-8.438c4.378-6.568 10.375-15.562 22.656-15.562 12.282 0 18.278 8.995 22.657 15.562 3.997 5.996 5.962 8.438 9.344 8.438s5.347-2.442 9.344-8.438c4.378-6.567 10.375-15.562 22.656-15.562 12.282 0 18.28 8.995 22.659 15.562 3.779 5.667 5.788 8.213 8.869 8.422l11.459.007c3.289-10.191 5.023-20.966 5.023-31.991 0-36.89-19.557-70.97-51.238-89.643l-3.178-7.944-34.78 24.843c5.667 6.465 9.196 16.741 9.196 28.744 0 20.523-10.317 36-24 36s-24-15.477-24-36c0-12.003 3.529-22.279 9.196-28.743l-34.78-24.843-3.178 7.944c-27.038 15.935-45.244 43.093-50 73.642h-25.238c-30.879 0-56-25.122-56-56s25.121-56 56-56h72v-16h-72c-39.701 0-72 32.299-72 72s32.299 72 72 72zm144-32h16v16h-16zm-96 0h16v16h-16z" />
 							<path
 								d="m121.371 480c-.888 2.503-1.371 5.196-1.371 8 0 13.233 10.767 24 24 24h224c13.233 0 24-10.767 24-24 0-2.804-.483-5.497-1.371-8z" />
-							</svg>
+						</svg>
 						<h3>Лучшие кальяны</h3>
 						<p>Крепкий? Легкий? Кислый? Сладкий? Наш кальянный мастер поможет вам определиться</p>
 					</div>
@@ -1757,7 +1775,8 @@
 				<div class="modal_background"></div>
 				<div class="modal">
 					<div class="modal_content">
-						<form action="ajax.php" method="POST">
+						<form id="ajax_form" action="ajax.php" method="POST">
+							<input id="form_valid" type="text" value="false" name="validation" hidden>
 							<h3>placeholder</h3>
 							<span class="separator"></span>
 							<div class="form_inputs">
@@ -1768,18 +1787,19 @@
 								</div>
 								<div class="input_wrapper">
 									<i class="fas fa-mobile"></i>
-									<input class="phone_number" type="text" name="number" placeholder="8 (999) 969-83-59">
+									<input class="phone_number" type="text" name="number" placeholder="8 (999) 969-83-59" minlength="17" required>
 								</div>
 								<div class="input_wrapper reserve_input">
 									<i class="fas fa-user-friends"></i>
-									<input class="phone_number" type="text" name="member_count" placeholder="Количество человек">
+									<input type="text" name="member_count" placeholder="Количество человек">
 								</div>
 								<div class="input_wrapper reserve_input">
 									<i class="fas fa-clock"></i>
-									<input class="phone_number" type="text" name="time" placeholder="Время посещения">
+									<input type="text" name="time" placeholder="Время посещения">
 								</div>
 							</div>
-							<div class="center"><button class="purple_button">placeholder</button></div>
+							<div class="center"><p class="form_response">Спасибо, сообщение успешно отправлено!</p></div>
+							<div class="center"><button type="submit" class="submit_button purple_button">placeholder</button></div>
 						</form>
 					</div>
 					<a class="modal_close"></i></a>
@@ -1805,11 +1825,9 @@
 		<div class="modal_window__flex">
 			<div class="modal_background"></div>
 			<div class="modal">
-				<iframe class="youtube-video" width="100%" height="500px" src="<iframe width=" 560" height="315"
-					src="https://www.youtube.com/embed/raDyQma0nmM" frameborder="0"
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"
+				<iframe class="youtube-video" width="100%" height="500px" src="https://www.youtube.com/embed/raDyQma0nmM"
 					frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
+					allowfullscreen></iframe>"
 				<a class="modal_close"></i></a>
 			</div>
 		</div>

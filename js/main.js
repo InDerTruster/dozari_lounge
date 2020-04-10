@@ -121,7 +121,7 @@ $(document).ready(function name(params) {
 
 	//Для закрытия модалок
 	$(".modal_window").bind("click", function (e) {
-		e.preventDefault();
+		/* e.preventDefault(); */ //Мешало отправке формы
 		if ($(e.target).hasClass('modal_background') || $(e.target).hasClass('modal_close')) {
 			$(this).fadeOut(500);
 			if ($('#modal_tour_container canvas').length > 0) {
@@ -131,7 +131,7 @@ $(document).ready(function name(params) {
 		}
 	});
 
-	$('.phone_number').mask('8 (999) 969-83-59');
+	$('.phone_number').mask('8 (000) 000-00-00');
 
 	//Перещелкивание вкладок меню по клику
 	$('.menu_tabs__tab').click(function () {
@@ -243,9 +243,8 @@ $(document).ready(function name(params) {
 		// no need to specify options unless they differ from the defaults
 		let target = this;
 		let endVal = parseInt($(this).attr('data-endVal'));
-		let randTime = endVal/100*6;
+		let randTime = endVal / 100 * 6;
 		theAnimation = new countUp(target, 0, endVal, 0, randTime);
-		console.log(theAnimation);
 		theAnimation.start();
 	});
 
@@ -254,6 +253,50 @@ $(document).ready(function name(params) {
 		e.preventDefault();
 		$('.main_menu').slideToggle();
 		$(this).toggleClass('active');
+	});
+
+
+	//Отправка формы
+	$('form').submit(function (e) {
+		e.preventDefault();
+		let form = $(this);
+		$.ajax({
+			type: $(this).attr('method'),
+			url: $(this).attr('action'),
+			data: $(this).serialize(),
+			success: function (data) {
+				if (data == 'true') {
+					$('.form_response').html('Спасибо, ваше сообщение успешно отправлено!');
+					$('.form_response').addClass('menu_text_green');
+					$('.form_response').slideToggle();
+					form[0].reset();
+					setTimeout(function(){
+					    $('.form_response').removeClass('menu_text_green');
+						$('.form_response').slideToggle();
+						$(".modal_window").fadeOut(500);
+					}, 2000);
+				}else{
+					$('.form_response').html('Сообщение не отправлено, попробуйте еще раз.');
+					$('.form_response').addClass('menu_text_red');
+					$('.form_response').show();
+				}
+			},
+			error: function (data) {
+				$('.form_response').html('Сообщение не отправлено, попробуйте еще раз.');
+				$('.form_response').addClass('menu_text_red');
+				$('.form_response').show();
+			},
+		});
+	});
+
+	//Доп мера от спама
+	$('.phone_number').keyup(function(){
+	  console.log($(this).val().length);
+	  if ($(this).val().length === 17) {
+	  	$('#form_valid').val('true');
+	  }else{
+	  	$('#form_valid').val('false');
+	  }
 	});
 
 });
